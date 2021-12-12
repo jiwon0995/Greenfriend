@@ -5,10 +5,7 @@ import {
 	InMemoryCache,
 } from '@apollo/client';
 import 'antd/dist/antd.css';
-import { Global } from '@emotion/react';
 import { createUploadLink } from 'apollo-upload-client';
-import { createContext, useState, useEffect } from 'react';
-import { onError } from '@apollo/client/link/error';
 import { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
