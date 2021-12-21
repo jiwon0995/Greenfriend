@@ -3,44 +3,54 @@ import {
 	Title,
 	ContentsWrapper,
 	InputWrapper,
-	Label,
+	Error,
 	TitleInput,
 	ContentsInput,
 	Button,
 	ImageBox,
 	ImageWrapper,
-	WriterInput,
 	WriterWrapper,
+	Label,
 } from '../write/BoardWrite.styles';
+import Input01 from '../../../commons/inputs/01/Input01';
 
-interface Iprops {
-	handleSubmit: string;
-
-}
-
-export default function BoardWriteUI(props:Iprops) {
-  return (
+export default function BoardWriteUI(props) {
+	return (
 		<form onSubmit={props.handleSubmit(props.onClickSubmit)}>
 			<Wrapper>
 				<ContentsWrapper>
 					<Title>🌱 게시글 등록</Title>
 					<WriterWrapper>
-						<InputWrapper>
-							<Label>작성자</Label>
-              <WriterInput type="text" {...props.register("title")}/>
-						</InputWrapper>
-						<InputWrapper>
-							<Label>비밀번호</Label>
-              <WriterInput type="password" {...props.register("password")}/>
-						</InputWrapper>
+						<div>
+							<Input01
+								label="작성자"
+								register={props.register('writer')}
+								type={'text'}
+							/>
+							<Error>{props.formState.errors.writer?.message}</Error>
+						</div>
+						<div>
+							<Input01
+								label="비밀번호"
+								register={props.register('password')}
+								type={'password'}
+							/>
+							<Error>{props.formState.errors.password?.message}</Error>
+						</div>
 					</WriterWrapper>
 					<InputWrapper>
 						<Label>제목</Label>
-						<TitleInput type="text" />
+						<TitleInput
+							type="text"
+							{...props.register('title')}
+							maxLength="50"
+						/>
+						<Error>{props.formState.errors.title?.message}</Error>
 					</InputWrapper>
 					<InputWrapper>
 						<Label>내용</Label>
-						<ContentsInput />
+						<ContentsInput type="text" {...props.register('contents')} />
+						<Error>{props.formState.errors.contents?.message}</Error>
 					</InputWrapper>
 					<ImageWrapper>
 						<Label>이미지 등록</Label>

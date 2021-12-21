@@ -13,7 +13,7 @@ export const ContentsWrapper = styled.div`
   margin-bottom: 100px;
   padding: 50px 70px 100px 70px;
   width: 900px;
-  border: 1px solid #bea569;
+  /* border: 1px solid #bea569; */
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -22,27 +22,28 @@ export const ContentsWrapper = styled.div`
 export const Title = styled.div`
   font-size: 20px;
   color: #bea569;
+  margin-bottom: 50px;
 `
 export const InputWrapper = styled.div`
-  padding-top: 40px;
+  padding-top: 30px;
 `
 export const WriterWrapper = styled.div`
-  width: 100%;
+  width: 760px;
+  padding: 30px 0px;
+  border-top: 1px solid #bea569;
+  border-bottom: 1px solid #bea569;
   display: flex;
-  justify-content: space-between;
-`
-export const WriterInput = styled.input`
-  width: 350px;
-  height: 40px;
-  border: 1px solid #bea569;
-  outline: none;
-  background: none;
-  padding: 0px 10px;
 `
 export const Label = styled.div`
-  font-size: 15px;
-  padding-bottom: 5px;
-  color: #bea569;
+	font-size: 15px;
+	padding-right: 5px;
+  padding-bottom: 10px;
+	color: #bea569;
+`;
+export const Error = styled.div`
+  font-size: 12px;
+  padding: 5px 0px;
+  color: green;
 `
 export const TitleInput = styled.input`
   width: 760px;
@@ -50,16 +51,14 @@ export const TitleInput = styled.input`
   border: 1px solid #bea569;
   outline: none;
   background: none;
-  padding: 0px 10px;
 `
 export const ContentsInput = styled.textarea`
   width: 760px;
-  min-height: 500px;
+  min-height: 300px;
   border: 1px solid #bea569;
   background: none;
   outline: none;
   resize: none;
-  padding: 10px 10px;
 `
 export const Button = styled.button`
   margin-top: 70px;
