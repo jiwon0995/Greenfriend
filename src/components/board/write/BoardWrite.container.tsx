@@ -4,10 +4,12 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { CREATE_BOARD } from "../write/BoardWrite.queries"
 import { useMutation } from '@apollo/client';
 import { Formvalues } from './BoardWrite.types';
+import { useRouter } from 'next/router';
 import BoardWriteUI from './BoardWrite.pregenter'
 
 export default function BoradWritePage() { 
-  const [createBoard] = useMutation(CREATE_BOARD)
+	const [createBoard] = useMutation(CREATE_BOARD)
+	const router = useRouter()
   // formState : error가 담긴 곳
   const { handleSubmit, register, formState } = useForm({
     mode: "onChange",
@@ -24,7 +26,8 @@ export default function BoradWritePage() {
 						contents: data.contents,
 					},
 				},
-			}); console.log(result.data?.createBoard._id);
+			}); 
+			router.push(`/greenfriend/board/${result.data?.createBoard._id}`)
     } 
     catch (error) { console.log(error) }
   }

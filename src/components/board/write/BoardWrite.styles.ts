@@ -13,10 +13,8 @@ export const ContentsWrapper = styled.div`
   margin-bottom: 100px;
   padding: 50px 70px 100px 70px;
   width: 900px;
-  /* border: 1px solid #bea569; */
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 `
 export const Title = styled.div`
