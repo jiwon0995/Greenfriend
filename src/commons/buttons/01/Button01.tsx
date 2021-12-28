@@ -10,13 +10,14 @@ const Button = styled.div`
 	background-color: #bea569;
   outline: none;
   cursor: pointer;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 `;
 
 interface Iprops { 
-  label : string
+  label: string
+  onClick?: any
 }
 
 export default function Button01(props: Iprops) {
-	return <Button>{props.label}</Button>;
+  return <Button onClick={props.onClick}>{props.label}</Button>;
 }
