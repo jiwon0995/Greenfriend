@@ -12,7 +12,7 @@ import Button01 from "../../../commons/buttons/01/Button01"
 
 export default function BoardDetailUI(props) {
 	return (
-    <Wrapper>
+		<Wrapper>
 			<TitleWrapper>
 				<Title>{props.data?.fetchBoard.writer}</Title>
 			</TitleWrapper>
@@ -22,8 +22,18 @@ export default function BoardDetailUI(props) {
 			</WriterWrapper>
 			<ContentsWrapper>
 				<Cotents>{props.data?.fetchBoard.contents}</Cotents>
-      </ContentsWrapper>
-      <Button01 label="목록"/>
+			</ContentsWrapper>
+			<div
+				style={{
+					display: 'flex',
+					width: '600px',
+					justifyContent: 'space-around',
+				}}
+			>
+				<Button01 label="목록" onClick={props.onClickMoveToList} />
+				<Button01 label="수정" />
+				<Button01 label="삭제" onClick={props.onClickDelete} />
+			</div>
 		</Wrapper>
 	);
 }

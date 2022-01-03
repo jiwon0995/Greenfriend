@@ -1,4 +1,5 @@
 import Button01 from '../../../commons/buttons/01/Button01';
+import { getDate } from '../../../commons/libraries/utils';
 import * as S from './BoardList.styles';
 
 export default function BoardListUI(props) {
@@ -18,12 +19,12 @@ export default function BoardListUI(props) {
 				<div>
 					{props.boardsOfBest?.fetchBoardsOfTheBest.map((el) => (
 						<S.Row key={el._id}>
-							<S.BestBoard style={{ color: 'red' }}>Best!</S.BestBoard>
+							<S.BestBoard>Best!</S.BestBoard>
 							<S.ColumnTitle id={el._id} onClick={props.onClickMoveToDetail}>
 								{el.title}
 							</S.ColumnTitle>
               <S.ColumnWriter>{el.writer}</S.ColumnWriter>
-              <S.ColumnDate>{el.createdAt.slice(0,10)}</S.ColumnDate>
+              <S.ColumnDate>{getDate(el.createdAt)}</S.ColumnDate>
 						</S.Row>
 					))}
 				</div>
@@ -35,7 +36,7 @@ export default function BoardListUI(props) {
 								{el.title}
 							</S.ColumnTitle>
 							<S.ColumnWriter>{el.writer}</S.ColumnWriter>
-							<S.ColumnDate>{el.createdAt.slice(0, 10)}</S.ColumnDate>
+							<S.ColumnDate>{getDate(el.createdAt)}</S.ColumnDate>
 						</S.Row>
 					))}
 				</div>
