@@ -56,3 +56,9 @@ export const TopWrapper = styled.div`
   width: 950px;
   margin-top: 100px;
 `
+export const BestBoard = styled.div`
+  color: red;
+  font-size: 13px;
+  text-align: center;
+  width: 5%;
+`
