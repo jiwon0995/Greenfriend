@@ -7,7 +7,10 @@ import { Formvalues } from './BoardWrite.types';
 import { useRouter } from 'next/router';
 import BoardWriteUI from './BoardWrite.pregenter'
 
-export default function BoradWritePage() { 
+interface Iprops { 
+	isEdit:boolean
+}
+export default function BoradWritePage(props:Iprops) { 
 	const [createBoard] = useMutation(CREATE_BOARD)
 	const router = useRouter()
   // formState : error가 담긴 곳
@@ -15,6 +18,7 @@ export default function BoradWritePage() {
     mode: "onChange",
 		resolver: yupResolver(schema), //yup, hook-form 연결
 	});
+	
   const onClickSubmit = async (data: Formvalues) => {
     try { 
       const result = await createBoard({
@@ -37,6 +41,7 @@ export default function BoradWritePage() {
 			handleSubmit={handleSubmit}
 			register={register}
 			formState={formState}
+			isEdit={props.isEdit}
 		/>
 	);
 }

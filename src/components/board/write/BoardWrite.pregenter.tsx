@@ -19,7 +19,7 @@ export default function BoardWriteUI(props) {
 		<form onSubmit={props.handleSubmit(props.onClickSubmit)}>
 			<Wrapper>
 				<ContentsWrapper>
-					<Title>🌱 게시글 등록</Title>
+					<Title>{props.isEdit ? '🌿 게시글 수정' : '🌱 게시글 등록'}</Title>
 					<WriterWrapper>
 						<div>
 							<Input01
@@ -56,7 +56,7 @@ export default function BoardWriteUI(props) {
 						<Label>이미지 등록</Label>
 						<ImageBox>+</ImageBox>
 					</ImageWrapper>
-					<Button>등록하기</Button>
+					<Button>{props.isEdit ? '수정하기' : '등록하기'}</Button>
 				</ContentsWrapper>
 			</Wrapper>
 		</form>
