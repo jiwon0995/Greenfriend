@@ -1,8 +1,16 @@
+import { ChangeEvent } from 'react';
 import Button01 from '../../../commons/buttons/01/Button01';
 import { getDate } from '../../../commons/libraries/utils';
 import * as S from './BoardList.styles';
 
-export default function BoardListUI(props) {
+interface Iprops {
+	data: any;
+	boardsOfBest: any;
+	onClickMoveToDetail: (e: ChangeEvent<HTMLInputElement>) => void
+	onClickMoveToNew: () =>void
+}
+
+export default function BoardListUI(props:Iprops) {
 	return (
 		<S.Wrapper>
 			<S.TopWrapper>
@@ -17,7 +25,7 @@ export default function BoardListUI(props) {
 					<S.ColumnDate>날짜</S.ColumnDate>
 				</S.Row>
 				<div>
-					{props.boardsOfBest?.fetchBoardsOfTheBest.map((el) => (
+					{props.boardsOfBest?.fetchBoardsOfTheBest.map((el:any) => (
 						<S.Row key={el._id}>
 							<S.BestBoard>Best!</S.BestBoard>
 							<S.ColumnTitle id={el._id} onClick={props.onClickMoveToDetail}>
