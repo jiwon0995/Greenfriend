@@ -1,13 +1,13 @@
-import { ChangeEvent } from 'react';
+import { MouseEvent } from 'react';
 import Button01 from '../../../commons/buttons/01/Button01';
-import { getDate } from '../../../commons/libraries/utils';
+import { getDate } from '../../../../commons/libraries/utils';
 import * as S from './BoardList.styles';
 
 interface Iprops {
 	data: any;
 	boardsOfBest: any;
-	onClickMoveToDetail: (e: ChangeEvent<HTMLInputElement>) => void
-	onClickMoveToNew: () =>void
+	onClickMoveToDetail: (e: MouseEvent<HTMLDivElement>) => void;
+	onClickMoveToNew: () => void;
 }
 
 export default function BoardListUI(props:Iprops) {
@@ -37,7 +37,7 @@ export default function BoardListUI(props:Iprops) {
 					))}
 				</div>
 				<div>
-					{props.data?.fetchBoards.map((el, index: number) => (
+					{props.data?.fetchBoards.map((el:any, index: number) => (
 						<S.Row key="index">
 							<S.ColumnNum>{index + 1}</S.ColumnNum>
 							<S.ColumnTitle id={el._id} onClick={props.onClickMoveToDetail}>

@@ -1,4 +1,4 @@
-import * as S from '../write/BoardWrite.styles';
+import * as S from './BoardWrite.styles';
 import Input01 from '../../../commons/inputs/01/Input01';
 import {
 	FormState,
@@ -17,7 +17,7 @@ interface Iprops {
 	onClickUpdate: (data: Formvalues) => Promise<void>;
 }
 
-export default function BoardWriteUI(props:Iprops) {
+export default function BoardWriteUI(props: Iprops) {
 	return (
 		<form
 			onSubmit={
@@ -28,7 +28,9 @@ export default function BoardWriteUI(props:Iprops) {
 		>
 			<S.Wrapper>
 				<S.ContentsWrapper>
-					<S.Title>{props.isEdit ? '🌿 게시글 수정' : '🌱 게시글 등록'}</S.Title>
+					<S.Title>
+						{props.isEdit ? '🌿 게시글 수정' : '🌱 게시글 등록'}
+					</S.Title>
 					<S.WriterWrapper>
 						<div>
 							<Input01
@@ -61,7 +63,6 @@ export default function BoardWriteUI(props:Iprops) {
 					<S.InputWrapper>
 						<S.Label>내용</S.Label>
 						<S.ContentsInput
-							type="text"
 							{...props.register('contents')}
 							defaultValue={props.data?.fetchBoard.contents}
 						/>

@@ -5,7 +5,8 @@ module.exports = {
     },
     "extends": [
         "plugin:react/recommended",
-        "standard"
+        "standard",
+        "prettier"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -20,5 +21,6 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+        "react/react-in-jsx-scope" : "off"
     }
 };

@@ -46,3 +46,8 @@ export const Cotents = styled.div`
   font-size: 13px;
   padding-left: 10px;
 `
+export const BtnWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 600px;
+`

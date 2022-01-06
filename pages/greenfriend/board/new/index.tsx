@@ -1,4 +1,4 @@
-import BoradWritePage from "../../../../src/components/board/write/BoardWrite.container"
+import BoradWritePage from "../../../../src/components/units/board/write/BoardWrite.container"
 
 export default function BoardWrite() {
   

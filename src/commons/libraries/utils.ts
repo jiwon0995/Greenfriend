@@ -1,5 +1,5 @@
 // Date 함수 ex) 2022-01-03
-export function getDate(myDate) { 
+export function getDate(myDate:any) { 
   const date = new Date(myDate)
   const year = date.getFullYear()
   const month = String(date.getMonth()+1).padStart(2,"0")

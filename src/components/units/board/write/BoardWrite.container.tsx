@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
-import { schema, schema2 } from '../write/BoardWrite.vaildations';
+import { schema, schema2 } from './BoardWrite.vaildations';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { CREATE_BOARD, UPDATE_BOARD } from '../write/BoardWrite.queries';
+import { CREATE_BOARD, UPDATE_BOARD } from './BoardWrite.queries';
 import { useMutation } from '@apollo/client';
 import { Formvalues } from './BoardWrite.types';
 import { useRouter } from 'next/router';
