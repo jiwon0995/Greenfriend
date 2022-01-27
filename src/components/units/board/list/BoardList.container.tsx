@@ -21,6 +21,7 @@ export default function BoardList() {
   const onClickMoveToDetail = (e: MouseEvent<HTMLDivElement>) =>
     router.push(`${e.target.id}`);
   const onClickMoveToNew = () => router.push("new");
+
   return (
     <BoardListUI
       data={data}
